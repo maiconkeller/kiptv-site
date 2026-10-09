@@ -1,0 +1,143 @@
+/* kIPTV — site estático (GitHub Pages). Sem JS, sem requisições a terceiros.
+   Cores da marca: SDD-10 §1. */
+
+/* Sora é opcional e auto-hospedada (SIL OFL 1.1). Sem o arquivo, cai na fonte do sistema. */
+@font-face {
+  font-family: "Sora";
+  src: url("fonts/Sora-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --bg-soft: #f6f5f3;
+  --text: #16151a;
+  --text-soft: #55525c;
+  --border: #e4e1dc;
+  --brand-k: #e8173f;      /* "k" do logotipo, AA em fundo claro */
+  --accent: #e8173f;       /* links: #FF3B5C não passa AA como texto no claro */
+  --wordmark: #16151a;
+  --radius: 12px;
+  --measure: 42rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121116;
+    --bg-soft: #1e1d24;
+    --text: #f4f2ef;
+    --text-soft: #b5b1ba;
+    --border: #2e2c35;
+    --brand-k: #ff5a75;
+    --accent: #ff5a75;
+    --wordmark: #f4f2ef;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1.0625rem/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+a { color: var(--accent); text-underline-offset: 0.15em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 1rem; top: 1rem; background: var(--bg); padding: 0.5rem 0.75rem; z-index: 10; }
+
+header.site, main, footer.site {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+header.site {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+header.site nav { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.95rem; }
+header.site nav a { color: var(--text-soft); text-decoration: none; }
+header.site nav a:hover, header.site nav a[aria-current="page"] { color: var(--text); text-decoration: underline; }
+
+/* Logotipo em texto: kIPTV, "k" coral (SDD-10 §1). */
+.wordmark {
+  font-family: "Sora", system-ui, -apple-system, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  color: var(--wordmark);
+  text-decoration: none;
+  line-height: 1;
+}
+.wordmark .k { color: var(--brand-k); }
+header.site .wordmark { font-size: 1.6rem; }
+
+.hero { text-align: center; padding: 3.5rem 0 2rem; }
+.hero img { width: 128px; height: 128px; }
+.hero .wordmark { display: block; font-size: clamp(3rem, 12vw, 4.5rem); margin: 1rem 0 0.5rem; }
+.hero .tagline { font-size: 1.25rem; color: var(--text-soft); margin: 0 auto; max-width: 30rem; }
+
+main { padding-top: 1.5rem; padding-bottom: 3rem; }
+
+h1 { font-size: 2rem; line-height: 1.2; margin: 1.5rem 0 0.5rem; letter-spacing: -0.01em; }
+h2 { font-size: 1.35rem; line-height: 1.3; margin: 2.25rem 0 0.5rem; }
+h3 { font-size: 1.1rem; margin: 1.5rem 0 0.25rem; }
+
+.meta { color: var(--text-soft); font-size: 0.95rem; }
+
+.features { list-style: none; padding: 0; display: grid; gap: 0.75rem; }
+.features li { background: var(--bg-soft); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; }
+
+.notice {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--brand-k);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  margin: 1.5rem 0;
+}
+.notice p { margin: 0; }
+
+.lang-switch { display: flex; gap: 0.75rem; font-size: 0.95rem; margin: 0.5rem 0 1rem; }
+
+section.lang + section.lang { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+
+dl.errors dt { font-weight: 600; margin-top: 1rem; }
+dl.errors dd { margin: 0.25rem 0 0 0; color: var(--text-soft); }
+
+code, kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.05em 0.35em;
+}
+
+footer.site {
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+  padding-bottom: 2rem;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+footer.site nav { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}

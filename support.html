@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ajuda e suporte — kIPTV</title>
+  <meta name="description" content="Como adicionar uma lista M3U ao kIPTV, erros comuns e contato.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+</head>
+<body>
+  <a class="skip" href="#pt">Pular para o conteúdo</a>
+  <header class="site">
+    <a class="wordmark" href="./" aria-label="kIPTV, início"><span class="k">k</span>IPTV</a>
+    <nav aria-label="Principal">
+      <a href="support.html" aria-current="page">Suporte</a>
+      <a href="privacy.html">Privacidade</a>
+    </nav>
+  </header>
+
+  <main>
+    <nav class="lang-switch" aria-label="Idioma / Language">
+      <a href="#pt" hreflang="pt-BR">Português</a>
+      <a href="#en" hreflang="en">English</a>
+      <a href="#es" hreflang="es">Español</a>
+    </nav>
+
+    <!-- Os textos entre aspas espelham as strings do app (Localizable.xcstrings). Atualize os dois juntos. -->
+    <section class="lang" id="pt" lang="pt-BR">
+      <h1>Ajuda e suporte</h1>
+
+      <div class="notice" role="note">
+        <p>O kIPTV <strong>não fornece canais, listas nem conteúdo</strong>. Você precisa de uma lista M3U própria, por exemplo a do seu provedor. Não podemos indicar, vender nem consertar listas de terceiros.</p>
+      </div>
+
+      <h2>Como adicionar uma lista M3U</h2>
+      <h3>Por link (URL)</h3>
+      <ol>
+        <li>No primeiro uso, toque em <strong>Adicionar lista</strong>. Depois disso, abra <strong>Listas</strong> (botão com o ícone de lista na barra superior) e toque em <strong>+</strong>. No Mac, use também o menu <strong>Canais → Nova lista…</strong> (<kbd>⇧⌘N</kbd>).</li>
+        <li>Em <strong>Endereço da lista</strong>, cole o link que começa com <code>http://</code> ou <code>https://</code>.</li>
+        <li>O nome é opcional (o padrão é o endereço do servidor). Toque em <strong>Adicionar</strong>.</li>
+        <li>A lista é baixada e conferida antes de ser salva. Pronto: os canais aparecem em <strong>Todos</strong> e nas categorias.</li>
+      </ol>
+      <h3>Por arquivo</h3>
+      <ol>
+        <li>Em <strong>Adicionar lista</strong>, escolha <strong>Arquivo</strong> e toque em <strong>Escolher arquivo…</strong>.</li>
+        <li>Selecione um arquivo <code>.m3u</code>, <code>.m3u8</code> ou de texto (do app Arquivos, iCloud Drive ou do Mac).</li>
+      </ol>
+      <h3>Dicas</h3>
+      <ul>
+        <li><strong>Atualizar:</strong> puxe a lista para baixo ou use <strong>Atualizar todas</strong> (<kbd>⌘R</kbd> no Mac e no iPad com teclado). As listas também se atualizam sozinhas quando o cache fica antigo.</li>
+        <li><strong>User-Agent:</strong> alguns provedores só aceitam um identificador específico. Defina-o em <strong>Listas → Editar lista → User-agent</strong>.</li>
+        <li><strong>Favoritos:</strong> deslize o canal para a direita ou use o menu do canal (<kbd>⌘D</kbd> no Mac).</li>
+        <li><strong>Trocar de canal:</strong> <kbd>⌘↑</kbd> e <kbd>⌘↓</kbd>; <kbd>espaço</kbd> pausa e retoma.</li>
+      </ul>
+
+      <h2>Formatos compatíveis</h2>
+      <p>O kIPTV usa o player nativo da Apple. Ele reproduz <strong>HLS</strong> (links <code>.m3u8</code>) e <strong>MP4</strong>. Não reproduz RTMP, MPEG-TS “cru” (links sem extensão que entregam o fluxo direto), MKV nem OGG. Se a sua lista usa esses formatos, peça ao provedor a versão HLS.</p>
+
+      <h2>Erros comuns</h2>
+      <dl class="errors">
+        <dt>“Formato de vídeo não suportado por este player.”</dt>
+        <dd>O canal usa um formato que o player da Apple não abre (veja acima). Não é um problema do aparelho. Use <strong>Próximo canal</strong>.</dd>
+
+        <dt>“O canal não respondeu a tempo.” / “O servidor demorou demais para responder.”</dt>
+        <dd>O canal não começou a tocar em 15 segundos, ou o servidor da lista não respondeu em 30 segundos. Pode estar sobrecarregado ou fora do ar. Toque em <strong>Tentar novamente</strong> mais tarde e confira sua conexão.</dd>
+
+        <dt>“O canal parece estar fora do ar.”</dt>
+        <dd>O endereço do canal não existe mais ou o servidor está desligado. Atualize a lista; se continuar, fale com o provedor da lista.</dd>
+
+        <dt>“O canal recusou a conexão (HTTP 403)…” / “Acesso negado pelo servidor…”</dt>
+        <dd>O servidor bloqueou o acesso, geralmente por região (geobloqueio), login ou User-Agent. Confira o User-Agent da lista ou fale com o provedor.</dd>
+
+        <dt>“O link não retornou uma lista M3U (parece uma página da web).”</dt>
+        <dd>O endereço abre uma página, não o arquivo da lista. Copie o link direto do arquivo <code>.m3u</code>, não o da página de download.</dd>
+
+        <dt>“Lista não encontrada (HTTP 404). Verifique o link.”</dt>
+        <dd>O link está errado ou a lista foi removida. Copie o endereço de novo.</dd>
+
+        <dt>“A lista está vazia.”</dt>
+        <dd>O arquivo foi baixado, mas não tem canais válidos no formato M3U (<code>#EXTM3U</code> e linhas <code>#EXTINF</code>).</dd>
+
+        <dt>“Sem conexão com a internet. Mostrando a última versão salva.”</dt>
+        <dd>Você pode navegar pelos canais em cache, mas o vídeo precisa de internet.</dd>
+      </dl>
+
+      <h2>Contato</h2>
+      <p>Não achou a resposta? Escreva para <a href="mailto:maiconkeller@outlook.com?subject=kIPTV%20-%20suporte">maiconkeller@outlook.com</a>. Informe o aparelho, a versão do sistema, a versão do kIPTV (em <strong>Sobre</strong>) e a mensagem de erro. <strong>Não envie o link da sua lista</strong> se ele contiver usuário ou senha.</p>
+    </section>
+
+    <section class="lang" id="en" lang="en">
+      <h1>Help &amp; support</h1>
+
+      <div class="notice" role="note">
+        <p>kIPTV <strong>does not provide any channels, playlists or content</strong>. You need your own M3U playlist, for example one from your provider. We can't recommend, sell or fix third-party playlists.</p>
+      </div>
+
+      <h2>How to add an M3U playlist</h2>
+      <h3>By link (URL)</h3>
+      <ol>
+        <li>On first launch, tap <strong>Add Playlist</strong>. After that, open <strong>Playlists</strong> (the list button in the top bar) and tap <strong>+</strong>. On the Mac you can also use <strong>Channels → New Playlist…</strong> (<kbd>⇧⌘N</kbd>).</li>
+        <li>In <strong>Playlist address</strong>, paste the link starting with <code>http://</code> or <code>https://</code>.</li>
+        <li>The name is optional (defaults to the server address). Tap <strong>Add</strong>.</li>
+        <li>The playlist is downloaded and checked before it's saved. Its channels then show up in <strong>All</strong> and in the categories.</li>
+      </ol>
+      <h3>From a file</h3>
+      <ol>
+        <li>In <strong>Add Playlist</strong>, choose <strong>File</strong> and tap <strong>Choose File…</strong>.</li>
+        <li>Pick a <code>.m3u</code>, <code>.m3u8</code> or plain text file (from Files, iCloud Drive or your Mac).</li>
+      </ol>
+      <h3>Tips</h3>
+      <ul>
+        <li><strong>Refresh:</strong> pull down on the list or use <strong>Refresh All</strong> (<kbd>⌘R</kbd> on Mac and on iPad with a keyboard). Playlists also refresh on their own when the cache gets old.</li>
+        <li><strong>User agent:</strong> some providers require a specific one. Set it in <strong>Playlists → Edit Playlist → User agent</strong>.</li>
+        <li><strong>Favorites:</strong> swipe a channel to the right or use its menu (<kbd>⌘D</kbd> on Mac).</li>
+        <li><strong>Switch channels:</strong> <kbd>⌘↑</kbd> and <kbd>⌘↓</kbd>; <kbd>space</kbd> pauses and resumes.</li>
+      </ul>
+
+      <h2>Supported formats</h2>
+      <p>kIPTV uses Apple's native player. It plays <strong>HLS</strong> (<code>.m3u8</code> links) and <strong>MP4</strong>. It does not play RTMP, raw MPEG-TS (extensionless links that send the stream directly), MKV or OGG. If your playlist uses those formats, ask your provider for the HLS version.</p>
+
+      <h2>Common errors</h2>
+      <dl class="errors">
+        <dt>“Video format not supported by this player.”</dt>
+        <dd>The channel uses a format Apple's player can't open (see above). It's not a problem with your device. Use <strong>Next channel</strong>.</dd>
+
+        <dt>“The channel didn't respond in time.” / “The server took too long to respond.”</dt>
+        <dd>The channel didn't start playing within 15 seconds, or the playlist server didn't respond within 30 seconds. It may be overloaded or offline. Tap <strong>Try Again</strong> later and check your connection.</dd>
+
+        <dt>“The channel appears to be off the air.”</dt>
+        <dd>The channel's address no longer exists or the server is down. Refresh the playlist; if it persists, contact the playlist provider.</dd>
+
+        <dt>“The channel refused the connection (HTTP 403)…” / “Access denied by the server…”</dt>
+        <dd>The server blocked access, usually because of region (geo-blocking), login or user agent. Check the playlist's user agent or contact your provider.</dd>
+
+        <dt>“The link did not return an M3U playlist (it looks like a web page).”</dt>
+        <dd>The address opens a web page, not the playlist file. Copy the direct link to the <code>.m3u</code> file, not the download page.</dd>
+
+        <dt>“Playlist not found (HTTP 404). Check the link.”</dt>
+        <dd>The link is wrong or the playlist was removed. Copy the address again.</dd>
+
+        <dt>“The playlist is empty.”</dt>
+        <dd>The file was downloaded but has no valid M3U channels (<code>#EXTM3U</code> and <code>#EXTINF</code> lines).</dd>
+
+        <dt>“No internet connection. Showing the last saved version.”</dt>
+        <dd>You can browse cached channels, but video needs an internet connection.</dd>
+      </dl>
+
+      <h2>Contact</h2>
+      <p>Didn't find an answer? Email <a href="mailto:maiconkeller@outlook.com?subject=kIPTV%20support">maiconkeller@outlook.com</a>. Include your device, OS version, kIPTV version (in <strong>About</strong>) and the error message. <strong>Don't send your playlist link</strong> if it contains a username or password.</p>
+    </section>
+
+    <section class="lang" id="es" lang="es">
+      <h1>Ayuda y soporte</h1>
+
+      <div class="notice" role="note">
+        <p>kIPTV <strong>no ofrece canales, listas ni contenido</strong>. Necesitas tu propia lista M3U, por ejemplo la de tu proveedor. No podemos recomendar, vender ni reparar listas de terceros.</p>
+      </div>
+
+      <h2>Idioma de la app</h2>
+      <p>La app está en español, portugués e inglés y sigue el idioma de tu dispositivo. Para cambiarlo solo en kIPTV: en iPhone y iPad, <strong>Configuración → kIPTV → Idioma</strong>; en Mac (macOS 13 o posterior), <strong>Configuración del Sistema → General → Idioma y región → Aplicaciones</strong>.</p>
+
+      <h2>Cómo agregar una lista M3U</h2>
+      <h3>Por enlace (URL)</h3>
+      <ol>
+        <li>La primera vez, toca <strong lang="en">Add Playlist</strong>. Después, abre <strong lang="en">Playlists</strong> (el botón con el ícono de lista en la barra superior) y toca <strong>+</strong>. En Mac también puedes usar el menú <strong lang="en">Channels → New Playlist…</strong> (<kbd>⇧⌘N</kbd>).</li>
+        <li>En <strong lang="en">Playlist address</strong>, pega el enlace que empieza con <code>http://</code> o <code>https://</code>.</li>
+        <li>El nombre es opcional (por omisión, la dirección del servidor). Toca <strong lang="en">Add</strong>.</li>
+        <li>La lista se descarga y se revisa antes de guardarse. Listo: los canales aparecen en <strong lang="en">All</strong> y en las categorías.</li>
+      </ol>
+      <h3>Desde un archivo</h3>
+      <ol>
+        <li>En <strong lang="en">Add Playlist</strong>, elige <strong lang="en">File</strong> y toca <strong lang="en">Choose File…</strong>.</li>
+        <li>Selecciona un archivo <code>.m3u</code>, <code>.m3u8</code> o de texto (desde la app Archivos, iCloud Drive o tu Mac).</li>
+      </ol>
+      <h3>Consejos</h3>
+      <ul>
+        <li><strong>Actualizar:</strong> desliza la lista hacia abajo o usa <strong lang="en">Refresh All</strong> (<kbd>⌘R</kbd> en Mac y en iPad con teclado). Las listas también se actualizan solas cuando la caché es antigua.</li>
+        <li><strong>User-Agent:</strong> algunos proveedores solo aceptan un identificador específico. Configúralo en <strong lang="en">Playlists → Edit Playlist → User agent</strong>.</li>
+        <li><strong>Favoritos:</strong> desliza el canal hacia la derecha o usa su menú (<kbd>⌘D</kbd> en Mac).</li>
+        <li><strong>Cambiar de canal:</strong> <kbd>⌘↑</kbd> y <kbd>⌘↓</kbd>; la <kbd>barra espaciadora</kbd> pausa y reanuda.</li>
+      </ul>
+
+      <h2>Formatos compatibles</h2>
+      <p>kIPTV usa el reproductor nativo de Apple. Reproduce <strong>HLS</strong> (enlaces <code>.m3u8</code>) y <strong>MP4</strong>. No reproduce RTMP, MPEG-TS “crudo” (enlaces sin extensión que envían el flujo directo), MKV ni OGG. Si tu lista usa esos formatos, pide a tu proveedor la versión HLS.</p>
+
+      <h2>Errores comunes</h2>
+      <dl class="errors">
+        <dt lang="en">“Video format not supported by this player.”</dt>
+        <dd>El canal usa un formato que el reproductor de Apple no abre (ver arriba). No es un problema de tu dispositivo. Usa <strong lang="en">Next channel</strong>.</dd>
+
+        <dt lang="en">“The channel didn't respond in time.” / “The server took too long to respond.”</dt>
+        <dd>El canal no empezó a reproducirse en 15 segundos, o el servidor de la lista no respondió en 30 segundos. Puede estar saturado o fuera de línea. Toca <strong lang="en">Try Again</strong> más tarde y revisa tu conexión.</dd>
+
+        <dt lang="en">“The channel appears to be off the air.”</dt>
+        <dd>La dirección del canal ya no existe o el servidor está apagado. Actualiza la lista; si sigue igual, contacta al proveedor de la lista.</dd>
+
+        <dt lang="en">“The channel refused the connection (HTTP 403)…” / “Access denied by the server…”</dt>
+        <dd>El servidor bloqueó el acceso, normalmente por región (geobloqueo), inicio de sesión o User-Agent. Revisa el User-Agent de la lista o contacta a tu proveedor.</dd>
+
+        <dt lang="en">“The link did not return an M3U playlist (it looks like a web page).”</dt>
+        <dd>La dirección abre una página web, no el archivo de la lista. Copia el enlace directo al archivo <code>.m3u</code>, no el de la página de descarga.</dd>
+
+        <dt lang="en">“Playlist not found (HTTP 404). Check the link.”</dt>
+        <dd>El enlace es incorrecto o la lista fue eliminada. Copia la dirección de nuevo.</dd>
+
+        <dt lang="en">“The playlist is empty.”</dt>
+        <dd>El archivo se descargó, pero no tiene canales M3U válidos (líneas <code>#EXTM3U</code> y <code>#EXTINF</code>).</dd>
+
+        <dt lang="en">“No internet connection. Showing the last saved version.”</dt>
+        <dd>Puedes explorar los canales en caché, pero el video necesita conexión a internet.</dd>
+      </dl>
+
+      <h2>Contacto</h2>
+      <p>¿No encontraste la respuesta? Escribe a <a href="mailto:maiconkeller@outlook.com?subject=kIPTV%20-%20soporte">maiconkeller@outlook.com</a> (en español, portugués o inglés). Indica tu dispositivo, la versión del sistema, la versión de kIPTV (en <strong lang="en">About</strong>) y el mensaje de error. <strong>No envíes el enlace de tu lista</strong> si contiene usuario o contraseña.</p>
+    </section>
+  </main>
+
+  <footer class="site">
+    <nav aria-label="Rodapé">
+      <a href="./">Início</a>
+      <a href="privacy.html">Política de privacidade</a>
+    </nav>
+    <p>© 2026 Maicon Keller.</p>
+  </footer>
+</body>
+</html>
